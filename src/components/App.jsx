@@ -14,6 +14,7 @@ import Spiner from './loader/Loader';
 import Modal from './modal/Modal';
 
 axios.defaults.baseURL = 'https://pixabay.com/api/';
+
 export default class App extends Component {
   static propTypes = { searchQuery: PropTypes.string };
   state = {
@@ -60,6 +61,7 @@ export default class App extends Component {
       }
     }
   }
+
   handleFormSubmit = searchQuery => {
     if (this.state.searchQuery === searchQuery) {
       return;
@@ -67,6 +69,7 @@ export default class App extends Component {
     this.resetState();
     this.setState({ searchQuery });
   };
+
   handleSelectedImage = (largeImageUrl, tags) => {
     this.setState({
       selectedImage: largeImageUrl,
